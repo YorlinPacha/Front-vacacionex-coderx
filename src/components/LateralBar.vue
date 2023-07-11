@@ -68,7 +68,7 @@
         quia, deleniti quasi sequi iusto exercitationem nihil nulla, laboriosam dolore corrupti fuga
         officiis? Odit a mollitia id magnam amet delectus quia blanditiis reprehenderit explicabo
         eveniet! Rem voluptatum explicabo ipsum quae, dolorum, laudantium doloribus a, illum saepe
-        sapiente accusantium dicta reiciendis? Amet iure porro voluptatum error fugit odit voluptas?
+        sapiente accusantium dicta reiciendis? Amet iure porro voluptatum error fugit odit volupta?
       </p>
     </main>
   </div>
