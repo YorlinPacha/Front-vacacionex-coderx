@@ -1,3 +1,0 @@
-http://127.0.0.1:5000/workers
-http://127.0.0.1:5000/calendars //año natural, con los festivos marcados como FIESTA
-http://127.0.0.1:5000/vacations //lista de vacaciones por worker
