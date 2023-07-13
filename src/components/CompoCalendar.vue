@@ -16,7 +16,7 @@ import { ref } from "vue";
 const isMultiSelection = true;
 const values = ref([]);
 
-console.log("fechas---", values.value);
+console.log("Valores iniciales:---", values.value);
 
 const detectarClic = (event) => {
   const elemento = event.target.title;
@@ -35,8 +35,7 @@ const detectarClic = (event) => {
     values.value.push(nuevaFecha);
   }
   
-  console.log("------new Date", new Date());
-  // No es necesario el splice aquí, ya que los elementos fueron agregados o eliminados correctamente
+ //miramos el nuevo array
   console.log("click---", values.value);
 };
 

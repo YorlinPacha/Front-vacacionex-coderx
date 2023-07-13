@@ -8,34 +8,34 @@
 
     <div class="menu__side" :class="{ menu__side_move: isMenuOpen }" id="menu_side">
       <div class="name__page">
-        <i class="fab fa-youtube"></i>
+        <i class="fa-solid fa-code"></i>
         <h4>Coderx</h4>
       </div>
 
       <div class="options__menu">
         <RouterLink to="/">
           <div class="option">
-            <i class="fa-regular fa-user"></i>
+            <i class="fa-solid fa-right-to-bracket"></i>
             <h4>Login</h4>
           </div>
         </RouterLink>
         <RouterLink to="/empleado">
           <div class="option">
-            <i class="fas fa-home" title="Inicio"></i>
-            <h4>Home</h4>
+            <i class="fa-regular fa-user"></i>
+            <h4>Empleado</h4>
           </div>
         </RouterLink>
 
         <RouterLink to="/encargado">
           <div class="option">
-            <i class="far fa-file" title="Portafolio"></i>
+            <i class="fa-solid fa-user-secret"></i>
             <h4>Encargado</h4>
           </div>
         </RouterLink>
 
         <RouterLink to="/superAdmin">
           <div class="option">
-            <i class="fas fa-video" title="Cursos"></i>
+            <i class="fa-solid fa-toolbox"></i>
             <h4>superAdmin</h4>
           </div>
         </RouterLink>
@@ -56,11 +56,11 @@
       </div>
     </div>
     <!-- ------------------------------------------------Aqui abajo se agregara todo el contenido que se vera en la vista ---------------------- -->
-    <main>
-      <h1>Informacion Comun para todos</h1>
+    <main class="cajaContenidoMain">
+      <h1 class="titulo">Abrimos rutas inclusivas al talento digital</h1>
       <br />
-      <p>
-        Avisos para todos los empleados, noticias, eventos..
+      <p class="parrafo">
+        Porque hoy se construye el mundo digital en el que viviremostodas y todos
       </p>
       <br />
       <p>
@@ -130,6 +130,10 @@ main {
   padding: 20px;
   margin-left: 80px;
   margin-top: 80px;
+  text-align: center;
+}
+.titulo, .parrafo{
+  font-size: 2rem;
 }
 
 header {
