@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="cardPerfil">
   <div class="card-border-top">
   </div>
   <div class="img">
@@ -17,7 +17,7 @@
 </script>
 
 <style scoped>
-    .card {
+    .cardPerfil {
   width: 190px;
   height: 254px;
   background-image: transparent;
@@ -30,7 +30,7 @@
   margin: auto auto auto 2rem;
 }
 
-.card span {
+.cardPerfil span {
   font-weight: 600;
   color: white;
   text-align: center;
@@ -39,7 +39,7 @@
   font-size: 1.3em;
 }
 
-.card .descripcion {
+.cardPerfil .descripcion {
   font-weight: 400;
   color: white;
   display: block;
@@ -48,7 +48,7 @@
   font-size: 1em;
 }
 
-.card .img {
+.cardPerfil .img {
   width: 70px;
   height: 70px;
   background: #e8e8e8;
