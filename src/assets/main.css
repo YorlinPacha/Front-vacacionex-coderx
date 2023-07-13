@@ -6,6 +6,11 @@
   text-decoration: none;
   font-family: 'Open Sans', sans-serif;
 }
-body{
+/* body{
   background-color: #FED2C0;
+} */
+
+@font-face {
+  font-family: 'crash';
+  src: url(../assets/fonts/ClashGrotesk-Medium.ttf);
 }

@@ -63,13 +63,13 @@
         Porque hoy se construye el mundo digital en el que viviremostodas y todos
       </p>
       <br />
-      <p>
+      <!-- <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident adipisci beatae impedit
         quia, deleniti quasi sequi iusto exercitationem nihil nulla, laboriosam dolore corrupti fuga
         officiis? Odit a mollitia id magnam amet delectus quia blanditiis reprehenderit explicabo
         eveniet! Rem voluptatum explicabo ipsum quae, dolorum, laudantium doloribus a, illum saepe
         sapiente accusantium dicta reiciendis? Amet iure porro voluptatum error fugit odit volupta?
-      </p>
+      </p> -->
     </main>
   </div>
 </template>
@@ -131,9 +131,15 @@ main {
   margin-left: 80px;
   margin-top: 80px;
   text-align: center;
+  /* border: 1px solid red; */
 }
-.titulo, .parrafo{
+.titulo{
+  font-size: 3rem;
+  font-family: 'crash';
+}
+.parrafo{
   font-size: 2rem;
+  font-family: 'open Sans', sans-serif;
 }
 
 header {
