@@ -6286,4 +6286,11 @@ figcaption {
   font-style: normal;
   font-display: swap;
 }
+/* body{
+  background-color: #FED2C0;
+} */
 
+@font-face {
+  font-family: 'crash';
+  src: url(../assets/fonts/ClashGrotesk-Medium.ttf);
+}
