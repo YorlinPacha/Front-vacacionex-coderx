@@ -11,10 +11,7 @@
         <i class="fa-solid fa-code"></i>
         <h4>Coderx</h4>
       </div>
-<!-- -------------------------------------------------- -->
-      <PerfilComponent />
 
-<!-- ----------------------------------------------------------- -->
       <div class="options__menu">
         <RouterLink to="/">
           <div class="option">
@@ -79,7 +76,6 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import PerfilComponent from './PerfilComponent.vue';
 
 const isMenuOpen = ref(false)
 const isMoveActive = ref(false)
@@ -215,8 +211,7 @@ header {
 .options__menu {
   padding: 20px 30px;
   position: absolute;
-  /* top: 80px; */
-  margin-top: 12rem;
+  top: 80px;
 }
 
 .options__menu a {
@@ -225,7 +220,6 @@ header {
   display: block;
   position: relative;
   transition: color 300ms;
-  text-decoration: none;
 }
 
 .options__menu a:hover {
@@ -233,7 +227,7 @@ header {
 }
 
 .options__menu .option {
-  /* padding: 20px 0px; */
+  padding: 20px 0px;
   display: flex;
   align-items: center;
   position: relative;
