@@ -5,28 +5,11 @@
       <h4>Consulta tus días de vacaciones</h4>
       <div v-if="loaded">
         <fieldset>
-          <input placeholder="Nombre" type="text" tabindex="1" required autofocus v-model="usuario.name">
-        </fieldset>
-        <fieldset>
-          <input placeholder="Rol" type="text" tabindex="2" required autofocus v-model="usuario.position">
-        </fieldset>
-        <fieldset>
-          <input placeholder="Departamento" type="text" tabindex="3" required autofocus v-model="usuario.department">
-        </fieldset>
-        <fieldset>
-          <input placeholder="Antigüedad" type="text" tabindex="5" required autofocus v-model="usuario.seniority">
-        </fieldset>
-        <fieldset>
-          <input placeholder="Email" type="text" tabindex="6" required autofocus v-model="usuario.email">
-        </fieldset>
-        <fieldset>
-          <input placeholder="Contraseña" type="text" tabindex="7" required autofocus v-model="usuario.passw">
-        </fieldset>
-        
-        <fieldset>
+          <div v-for="attribute in userAttributes" :key="attribute.name" class="form-field">
+  <label :for="attribute.name" class="label">{{ attribute.label }}</label>
+  <input :placeholder="attribute.label" :type="attribute.type" :tabindex="attribute.tabindex" :required="attribute.required" autofocus v-model="usuario[attribute.name]">
+</div>
           <button class="btn" @click.prevent="enviarWorker(usuario, usuario.id)">Aceptar</button>
-        </fieldset>
-        <fieldset>
           <button class="btn" @click.prevent="eliminarWorker(usuario.id)">Eliminar</button>
         </fieldset>
       </div>
@@ -58,6 +41,15 @@ export default {
 
     const worker = ref(null);
 
+    const userAttributes = [
+      { name: 'name', label: 'Nombre', type: 'text', tabindex: 1, required: true },
+      { name: 'position', label: 'Rol', type: 'text', tabindex: 2, required: true },
+      { name: 'department', label: 'Departamento', type: 'text', tabindex: 3, required: true },
+      { name: 'seniority', label: 'Antigüedad', type: 'text', tabindex: 5, required: true },
+      { name: 'email', label: 'Email', type: 'text', tabindex: 6, required: true },
+      { name: 'passw', label: 'Contraseña', type: 'text', tabindex: 7, required: true }
+    ];
+
     const enviarWorker = async (usuario, id) => {
       console.log(usuario, id);
       await WorkersController.updateWorker(id, usuario);
@@ -70,7 +62,7 @@ export default {
 
     onMounted(async () => {
       try {
-        const workerData = await WorkersController.getWorkerById(8);
+        const workerData = await WorkersController.getWorkerById(7);
         worker.value = workerData;
         usuario.value = {
           name: workerData.name,
@@ -79,7 +71,7 @@ export default {
           seniority: workerData.seniority,
           email: workerData.email,
           passw: workerData.passw,
-          id:workerData.id
+          id: workerData.id
         };
         loaded.value = true;
       } catch (error) {
@@ -92,11 +84,13 @@ export default {
       usuario,
       worker,
       enviarWorker,
-      eliminarWorker
+      eliminarWorker,
+      userAttributes
     };
   }
 };
 </script>
+
 
 <style>
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
@@ -118,7 +112,7 @@ body {
   font-size: 12px;
   line-height: 30px;
   color: #777;
-  background: #E9F4F6;
+  background-color: rgb(254, 210, 192);
 }
 
 main {
@@ -129,7 +123,7 @@ main {
   height: 60%;
   width: 60%;
   border-radius: 10px;
-  background: #017366;
+  
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
   position: absolute;
   top: 40%;
@@ -145,7 +139,7 @@ main {
 }
 
 .container {
-  max-width: 400px;
+  
   width: 100%;
   margin: 0 auto;
   position: relative;
@@ -157,7 +151,7 @@ main {
   height: 90%;
   width: 95%;
   border-radius: 10px;
-  background: #fff;
+ 
   position: absolute;
   top: -2%;
   left: 8%;
@@ -176,7 +170,7 @@ main {
 #contact {
   right: 10px;
   top:10px;
-  background: #FFFFFF;
+ 
   padding: 25px;
   margin: 150px 0;
   border-radius: 10px;
@@ -219,7 +213,6 @@ fieldset {
   padding: 10px;
   border:none;
   color: #88888C;
-  background-color: #F5FBF8;
 }
 
 #contact input[type="text"]:hover,
@@ -288,6 +281,20 @@ fieldset {
 margin-right: 5px;
 border: 1px solid red;
 color: rgb(255 0 0);
+}
+
+.form-field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.label {
+  width: 120px;
+  margin-right: 10px;
+}
+input {
+  flex: 1;
 }
 
 </style>
