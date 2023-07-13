@@ -1,6 +1,6 @@
 <script setup>
 import LateralBar from '../components/LateralBar.vue';
-import FormAdmin from '../components/FormAdmin.vue';
+import WorkerAdmin from '../components/WorkerAdmin.vue';
 </script>
 
 <template >
@@ -9,7 +9,7 @@ import FormAdmin from '../components/FormAdmin.vue';
   <!-- ------------------Agregar todo tu contenido dentro del div class="TodoContenido"------------ -->
   <div class="TodoContenido">
     <h1>Super Admin</h1>
-    <FormAdmin/>
+    <WorkerAdmin/>
   </div>
 </template>
 

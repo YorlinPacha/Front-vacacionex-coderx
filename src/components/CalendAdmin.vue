@@ -1,8 +1,8 @@
 <template>
   <div class="container"> 
     <form id="contact">
-      <h3>Vacaciones SOMOS F5</h3>
-      <h4>Consulta tus días de vacaciones</h4>
+      <h3>EDITAR /ELIMINAR Fecha</h3>
+    
       <div v-if="loaded">
         <fieldset>
           <div v-for="attribute in userAttributes" :key="attribute.name" class="form-field">
