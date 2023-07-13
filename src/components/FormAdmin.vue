@@ -4,9 +4,6 @@
       <h3>Vacaciones SOMOS F5</h3>
       <h4>Consulta tus días de vacaciones</h4>
       <div v-if="loaded">
-       USUARIO {{ usuario }}
-       <br>
-       WORKER {{ worker }}
         <fieldset>
           <input placeholder="Nombre" type="text" tabindex="1" required autofocus v-model="usuario.name">
         </fieldset>
@@ -34,7 +31,7 @@
         </fieldset>
       </div>
       <div v-else>
-        <div class="spinner-border text-warning" role="status">
+        <div class="spinner-border espiner" role="status">
           <span class="sr-only">Loading...</span>
         </div>
       </div>
