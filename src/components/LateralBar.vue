@@ -123,7 +123,7 @@ onUnmounted(() => {
 .body {
   margin-top: 80px;
   transition: margin-left 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 main {

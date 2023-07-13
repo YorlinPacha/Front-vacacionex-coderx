@@ -1,5 +1,7 @@
 <script setup>
 import LateralBar from '../components/LateralBar.vue';
+import CompoCalendar from '../components/CompoCalendar.vue';
+
 </script>
 
 <template >
@@ -7,6 +9,9 @@ import LateralBar from '../components/LateralBar.vue';
   <!-- ----------------------------------------------Agregar todo tu contenido dentro del div class="TodoContenido"------------ -->
   <div class="TodoContenido">
       <h1>Empleado</h1>
+      <CompoCalendar />
+
+
   </div>
 </template>
 
