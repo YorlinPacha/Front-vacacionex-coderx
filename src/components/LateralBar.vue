@@ -145,7 +145,7 @@ main {
 header {
   width: 100%;
   height: 80px;
-  background: #f5f5f5;
+  background: #fed2c0;
   display: flex;
   align-items: center;
   position: fixed;
