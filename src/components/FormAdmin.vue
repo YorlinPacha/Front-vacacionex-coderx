@@ -66,13 +66,14 @@ export default {
       await WorkersController.updateWorker(id, usuario);
     };
 
-    const eliminarWorker = (id) => {
+    const eliminarWorker = async (id) => {
       console.log(id);
+      await WorkersController.deleteWorker(id);
     };
 
     onMounted(async () => {
       try {
-        const workerData = await WorkersController.getWorkerById(6);
+        const workerData = await WorkersController.getWorkerById(8);
         worker.value = workerData;
         usuario.value = {
           name: workerData.name,
