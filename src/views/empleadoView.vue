@@ -19,7 +19,8 @@ import CompoCalendar from '../components/CompoCalendar.vue';
 .TodoContenido {
   margin: auto;
   padding: 11px;
-  border: .5px solid blue;
+  border: .5px solid #fff;
+  border-radius: 8px;
   width: 72%;
 }
 </style>

@@ -32,7 +32,7 @@
 
 .cardPerfil span {
   font-weight: 600;
-  color: white;
+  color: #343434;
   text-align: center;
   display: block;
   padding-top: 10px;
@@ -41,7 +41,7 @@
 
 .cardPerfil .descripcion {
   font-weight: 400;
-  color: white;
+  color: #343434;
   display: block;
   text-align: center;
   padding-top: 5px;

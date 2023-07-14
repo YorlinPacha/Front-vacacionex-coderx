@@ -43,7 +43,7 @@
           </div>
         </RouterLink>
 
-        <a href="#">
+        <!-- <a href="#">
           <div class="option">
             <i class="far fa-sticky-note" title="Blog"></i>
             <h4>Blog</h4>
@@ -55,7 +55,7 @@
             <i class="far fa-id-badge" title="Contacto"></i>
             <h4>Contacto</h4>
           </div>
-        </a>
+        </a> -->
       </div>
     </div>
     <!-- ------------------------------------------------Aqui abajo se agregara todo el contenido que se vera en la vista ---------------------- -->
@@ -176,16 +176,16 @@ header {
 .menu__side {
   width: 80px;
   height: 100%;
-  background: #1783db;
+  background: #cbbfe8;
   position: fixed;
   top: 0;
   left: 0;
-  color: white;
+  color: #343434;
   font-size: 18px;
   z-index: 300;
   overflow: hidden;
   overflow-y: scroll;
-  border-right: 20px solid #1783db;
+  border-right: 20px solid #cbbfe8;
   transition: all 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 
@@ -220,7 +220,7 @@ header {
 }
 
 .options__menu a {
-  color: #ffffffb2;
+  color: #343434;
   cursor: default;
   display: block;
   position: relative;
@@ -229,7 +229,7 @@ header {
 }
 
 .options__menu a:hover {
-  color: white;
+  color: #343434;
 }
 
 .options__menu .option {
