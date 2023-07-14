@@ -11,7 +11,7 @@
 
 <script setup>
 import { CalendarComponent as EjsCalendar } from "@syncfusion/ej2-vue-calendars";
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 
 const isMultiSelection = true;
 const values = ref([]);
@@ -19,6 +19,7 @@ const values = ref([]);
 console.log("Valores iniciales:---", values.value);
 
 const detectarClic = (event) => {
+ 
   const elemento = event.target.title;
   console.log("Detectado---", elemento);
   const nuevaFecha = elemento; // Crear una nueva instancia de Date para la nueva fecha
@@ -37,7 +38,46 @@ const detectarClic = (event) => {
   
  //miramos el nuevo array
   console.log("click---", values.value);
+  // esto devuelve un objeto
+  console.log(typeof(values.value));
+
 };
+//boton llamada
+const agregarFecha = () => {
+    console.log("click agregar",values.value);
+   guardarStorage(values.value);
+};
+
+
+//Guardaremos en local storage (convertir objeto a string)
+// function guardarStorage(values) {
+  
+//   localStorage.setItem("diasSeleccion", JSON.stringify(values));
+// }
+
+
+
+
+
+// ---------------- con chat gpt -----------
+
+
+
+function guardarStorage(values) {
+  localStorage.setItem("diasSeleccion", JSON.stringify([...values]));
+}
+
+function obtenerStorage() {
+  const storedValues = JSON.parse(localStorage.getItem("diasSeleccion"));
+  if (Array.isArray(storedValues) && storedValues.length > 0) {
+    values.value = [...storedValues];
+  }
+}
+
+onMounted(() => {
+  obtenerStorage();
+});
+
 
 </script>
 
