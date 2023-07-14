@@ -6,6 +6,9 @@
       :values="values"
     ></ejs-calendar>
     <button @click="agregarFecha">Agregar Fecha</button>
+    <ul>
+      <li v-for="(fecha, index) in values" :key="index">{{ fecha }}</li>
+    </ul>
   </div>
 </template>
 
@@ -50,18 +53,6 @@ const agregarFecha = () => {
 
 
 //Guardaremos en local storage (convertir objeto a string)
-// function guardarStorage(values) {
-  
-//   localStorage.setItem("diasSeleccion", JSON.stringify(values));
-// }
-
-
-
-
-
-// ---------------- con chat gpt -----------
-
-
 
 function guardarStorage(values) {
   localStorage.setItem("diasSeleccion", JSON.stringify([...values]));
@@ -69,14 +60,20 @@ function guardarStorage(values) {
 
 function obtenerStorage() {
   const storedValues = JSON.parse(localStorage.getItem("diasSeleccion"));
+  console.log("datos recuperados", storedValues);
+  values.value.splice(0, values.value.length); // Vaciar el array values.value
   if (Array.isArray(storedValues) && storedValues.length > 0) {
-    values.value = [...storedValues];
+    values.value.push(...storedValues); // Agregar los nuevos valores al array values.value
   }
 }
 
+
 onMounted(() => {
   obtenerStorage();
+  
 });
+
+
 
 
 </script>
