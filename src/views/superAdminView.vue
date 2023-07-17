@@ -10,7 +10,6 @@ import PrincipalAdmin from '../components/PrincipalAdmin.vue';
   <!-- -----------------Agregar todo tu contenido dentro del div class="TodoContenido"------------ -->
   <div class="TodoContenido">
     <h1>Super Admin</h1>
-    <WorkerAdmin/>
     <PrincipalAdmin />
   </div>
 </template>

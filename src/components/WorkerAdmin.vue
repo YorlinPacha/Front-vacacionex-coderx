@@ -23,6 +23,7 @@
 
 <script>
 import { ref, onMounted } from 'vue';
+import { useRoute } from 'vue-router'; // Importa useRoute desde vue-router
 import * as WorkersController from '../controllers/WorkersController';
 
 export default {
@@ -58,11 +59,11 @@ export default {
       console.log(id);
       await WorkersController.deleteWorker(id);
     };
-
-    onMounted(async () => {
+    const route = useRoute();
+    const fetchWorkerData = async () => {
       try {
-        const workerData = await WorkersController.getWorkerById(7);
-        worker.value = workerData;
+        const id = route.params.id; // Obtenemos el id de la URL usando useRoute
+        const workerData = await WorkersController.getWorkerById(id);
         usuario.value = {
           name: workerData.name,
           position: workerData.position,
@@ -76,7 +77,11 @@ export default {
       } catch (error) {
         console.error('Error al obtener el trabajador:', error);
       }
-    });
+    };
+
+    onMounted(fetchWorkerData); // Llamamos a la función fetchWorkerData en onMounted
+
+
 
     return {
       loaded,

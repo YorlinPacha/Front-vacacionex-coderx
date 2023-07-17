@@ -1,8 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import empleadoView from '../views/empleadoView.vue'
-import encargadoView from '../views/encargadoView.vue'
-import superAdminView from '../views/superAdminView.vue'
-import loginVue from '../views/loginVue.vue'
+import WorkerAdmin from '../components/WorkerAdmin.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -30,6 +27,11 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/encargadoView.vue')
+    },
+    {
+      path: '/worker/:id',
+      name: 'WorkerAdmin',
+      component: WorkerAdmin,
     },
     {
       path: '/superAdmin',
