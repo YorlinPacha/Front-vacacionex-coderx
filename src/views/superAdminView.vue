@@ -6,7 +6,7 @@ import WorkerAdmin from '../components/WorkerAdmin.vue';
 <template >
   <LateralBar/>
 
-  <!-- ------------------Agregar todo tu contenido dentro del div class="TodoContenido"------------ -->
+  <!-- -----------------Agregar todo tu contenido dentro del div class="TodoContenido"------------ -->
   <div class="TodoContenido">
     <h1>Super Admin</h1>
     <WorkerAdmin/>
