@@ -4,6 +4,10 @@
       @click="detectarClic"
       :isMultiSelection="isMultiSelection"
       :values="values"
+      :renderDayCell="disableDate"
+      :firstDayOfWeek="1"
+      :min="data[0].minDate" 
+      :max="data[0].maxDate"
     ></ejs-calendar>
     <button class="agregarBoton" @click="agregarFecha">Confirmar</button>
     <!-- <ul>
@@ -19,16 +23,11 @@
   </div>
   </div>
 </template>
-
-
-
-
-
-
 <script setup>
 import { CalendarComponent as EjsCalendar } from '@syncfusion/ej2-vue-calendars'
 import { onMounted, ref } from 'vue'
-
+const data = [{minDate: new Date("01/01/2023"), 
+                  maxDate: new Date("31/12/2024")}];
 const isMultiSelection = true
 const values = ref([])
 
@@ -71,11 +70,11 @@ const agregarFecha = () => {
 //Guardaremos en local storage (convertir objeto a string)
 
 function guardarStorage(values) {
-  localStorage.setItem('diasSeleccion', JSON.stringify([...values]))
+  sessionStorage.setItem('diasSeleccion', JSON.stringify([...values]))
 }
 
 function obtenerStorage() {
-  const storedValues = JSON.parse(localStorage.getItem('diasSeleccion'))
+  const storedValues = JSON.parse(sessionStorage.getItem('diasSeleccion'))
   console.log('datos recuperados', storedValues)
   values.value.splice(0, values.value.length) // Vaciar el array values.value
   if (Array.isArray(storedValues) && storedValues.length > 0) {
@@ -86,6 +85,13 @@ function obtenerStorage() {
 onMounted(() => {
   obtenerStorage()
 })
+
+
+function disableDate (args) {
+             if (args.date.getDay() === 0 || args.date.getDay() === 6) {
+               args.isDisabled = true;
+            }
+        }
 </script>
 
 <style>
