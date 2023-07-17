@@ -57,7 +57,16 @@ const detectarClic = (event) => {
       values.value.splice(index, 1)
     } else {
       // Si el objeto no existe en el array, agregarlo
-      values.value.push(nuevaFecha)
+      console.log("longitud antes del value", values.value.length);
+      if (values.value.length <=4){
+        values.value.push(nuevaFecha)
+         console.log("longitud despues del value push", values.value.length);
+      }else{
+        console.log("SE ha superado la longitud");
+        alert("NO se puede")
+      }
+     
+
     }
 
     //miramos el nuevo array
