@@ -5,7 +5,7 @@ import CompoCalendar from '../components/CompoCalendar.vue';
 </script>
 
 <template >
-  <LateralBar />
+  <!-- <LateralBar /> -->
   <!-- ----------------------------------------------Agregar todo tu contenido dentro del div class="TodoContenido"------------ -->
   <div class="TodoContenido">
       <h1>Empleado</h1>

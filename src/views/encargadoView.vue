@@ -3,7 +3,7 @@ import LateralBar from '../components/LateralBar.vue';
 </script>
 
 <template >
-  <LateralBar />
+  <!-- <LateralBar /> -->
   <!-- ----------------------------------------------Agregar todo tu contenido dentro del div class="TodoContenido"------------ -->
   <div class="TodoContenido">
     <h1>Encargado</h1>
