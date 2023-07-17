@@ -239,7 +239,7 @@ header {
   padding: 20px 30px;
   position: absolute;
   /* top: 80px; */
-  margin-top: 12rem;
+  margin-top: 5rem;
 }
 
 .options__menu a {

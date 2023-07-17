@@ -31,6 +31,12 @@ const data = [{minDate: new Date("01/01/2023"),
 const isMultiSelection = true
 const values = ref([])
 
+onMounted(() => {
+  obtenerStorage()
+})
+
+
+
 console.log('Valores iniciales:---', values.value)
 
 const detectarClic = (event) => {
@@ -40,7 +46,7 @@ const detectarClic = (event) => {
   if (elemento == '') {
     console.log('vacio')
   } else {
-    console.log('tiene informaciones')
+    console.log('tiene informacion')
     const nuevaFecha = elemento // Crear una nueva instancia de Date para la nueva fecha
 
     // En este código, utilizamos indexOf para buscar la posición del objeto nuevaFecha en el array values.value.
