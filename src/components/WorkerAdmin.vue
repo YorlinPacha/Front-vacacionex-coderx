@@ -8,7 +8,9 @@
   <label :for="attribute.name" class="label">{{ attribute.label }}</label>
   <input :placeholder="attribute.label" :type="attribute.type" :tabindex="attribute.tabindex" :required="attribute.required" autofocus v-model="usuario[attribute.name]">
 </div>
-          <button class="btn" @click.prevent="enviarWorker(usuario, usuario.id)">Aceptar</button>
+      <!-- Botones para Actualizar o Nuevo -->
+      <button v-if="id !== '0'" class="btn" @click.prevent="enviarWorker(usuario, usuario.id)"> Actualizar </button>
+      <button v-else class="btn" @click.prevent="nuevoWorker(usuario)"> Nuevo </button>
           <button class="btn" @click.prevent="eliminarWorker(usuario.id)">Eliminar</button>
         </fieldset>
       </div>
@@ -54,7 +56,11 @@ export default {
       console.log(usuario, id);
       await WorkersController.updateWorker(id, usuario);
     };
+const nuevoWorker = async (usuario) => {
+      console.log(usuario);
+      await WorkersController.createWorker(usuario);
 
+    };
     const eliminarWorker = async (id) => {
       console.log(id);
       await WorkersController.deleteWorker(id);
@@ -78,15 +84,18 @@ export default {
         console.error('Error al obtener el trabajador:', error);
       }
     };
+    const id = route.params.id;
 
     onMounted(fetchWorkerData); // Llamamos a la función fetchWorkerData en onMounted
 
 
 
     return {
+      id,
       loaded,
       usuario,
       worker,
+      nuevoWorker,
       enviarWorker,
       eliminarWorker,
       userAttributes

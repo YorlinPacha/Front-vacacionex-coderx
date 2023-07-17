@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a class="btn btn-primary" href="#" role="button">Nuevo Trabajador</a>
+    <a class="btn btn-primary" href="#" role="button"><router-link :to="'/worker/' + 0" class="btn btn-primary">Nuevo Trabajador</router-link></a>
     <a class="btn btn-primary" href="#" role="button">Nuevo Calendario</a>
     <a class="btn btn-primary" href="#" role="button">Tabla Calendario</a>
     <a class="btn btn-primary" href="#" role="button">Tabla Trabajador</a>
