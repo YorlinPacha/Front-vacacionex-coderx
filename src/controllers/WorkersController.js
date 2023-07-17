@@ -1,8 +1,11 @@
 // Controlador para interactuar con los endpoints del backend
+import router from '../router/index'
 
 const url = 'http://localhost:5000';
 
-export function createLogin(loginData) {
+
+
+export async function createLogin(loginData) {
   fetch(url + '/login', {
     method: 'POST',
     headers: {
@@ -12,13 +15,24 @@ export function createLogin(loginData) {
   })
     .then(response => response.json())
     .then(data => {
-      console.log(data);
+      console.log(data, data.worker.position);
       let tokenLS = JSON.stringify(data.token); //Lo preparas para LS
       sessionStorage.setItem("tokenLS", tokenLS); //Y mandas el token
       let userLS = JSON.stringify(data.worker); //Lo preparas para LS
       sessionStorage.setItem("userLS", userLS); //Y mandas el user
       let secretLS = JSON.stringify(data.secret); //Lo preparas para LS
       sessionStorage.setItem("secretLS", secretLS); //Y mandas el secret
+      switch (data.worker.position) {
+        case 'overviewer':
+          router.push('/encargado');
+          break;
+        case 'root':
+          router.push('/superAdmin');
+          break;
+        default:
+          router.push('/empleado');
+          break;
+      }
     })
     .catch(error => {
       console.log('Error al crear el login:', error);
