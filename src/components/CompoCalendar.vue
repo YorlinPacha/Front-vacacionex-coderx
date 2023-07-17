@@ -29,8 +29,12 @@
 import { CalendarComponent as EjsCalendar } from '@syncfusion/ej2-vue-calendars'
 import { onMounted, ref } from 'vue'
 
-const isMultiSelection = true
-const values = ref([])
+onMounted(() => {
+  obtenerStorage()
+})
+
+const isMultiSelection = true;
+const values = ref([]);
 
 console.log('Valores iniciales:---', values.value)
 
@@ -41,7 +45,7 @@ const detectarClic = (event) => {
   if (elemento == '') {
     console.log('vacio')
   } else {
-    console.log('tiene informaciones')
+    console.log('tiene informacion')
     const nuevaFecha = elemento // Crear una nueva instancia de Date para la nueva fecha
 
     // En este código, utilizamos indexOf para buscar la posición del objeto nuevaFecha en el array values.value.
@@ -76,16 +80,15 @@ function guardarStorage(values) {
 
 function obtenerStorage() {
   const storedValues = JSON.parse(localStorage.getItem('diasSeleccion'))
-  console.log('datos recuperados', storedValues)
-  values.value.splice(0, values.value.length) // Vaciar el array values.value
-  if (Array.isArray(storedValues) && storedValues.length > 0) {
-    values.value.push(...storedValues) // Agregar los nuevos valores al array values.value
-  }
+  console.log('datos recuperados', storedValues);
+  values.value.push(...storedValues) // Agregar los nuevos valores al array values.value
+  // values.value.splice(0, values.value.length) // Vaciar el array values.value
+  // if (Array.isArray(storedValues) && storedValues.length > 0) {
+  //   values.value.push(...storedValues) // Agregar los nuevos valores al array values.value
+  // }
 }
 
-onMounted(() => {
-  obtenerStorage()
-})
+
 </script>
 
 <style>
