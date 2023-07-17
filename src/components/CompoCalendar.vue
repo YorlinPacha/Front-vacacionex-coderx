@@ -25,6 +25,11 @@ const detectarClic = (event) => {
  
   const elemento = event.target.title;
   console.log("Detectado---", elemento);
+
+if (elemento==""){
+  console.log("vacio");
+}else{
+  console.log("tiene informaciones");
   const nuevaFecha = elemento; // Crear una nueva instancia de Date para la nueva fecha
   
   // En este código, utilizamos indexOf para buscar la posición del objeto nuevaFecha en el array values.value. 
@@ -43,6 +48,9 @@ const detectarClic = (event) => {
   console.log("click---", values.value);
   // esto devuelve un objeto
   console.log(typeof(values.value));
+}
+
+  
 
 };
 //boton llamada
