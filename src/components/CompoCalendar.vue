@@ -6,12 +6,15 @@
       :values="values"
     ></ejs-calendar>
     <button @click="agregarFecha">Agregar Fecha</button>
+    <ul>
+      <li v-for="(fecha, index) in values" :key="index">{{ fecha }}</li>
+    </ul>
   </div>
 </template>
 
 <script setup>
 import { CalendarComponent as EjsCalendar } from "@syncfusion/ej2-vue-calendars";
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 
 const isMultiSelection = true;
 const values = ref([]);
@@ -19,6 +22,7 @@ const values = ref([]);
 console.log("Valores iniciales:---", values.value);
 
 const detectarClic = (event) => {
+ 
   const elemento = event.target.title;
   console.log("Detectado---", elemento);
   const nuevaFecha = elemento; // Crear una nueva instancia de Date para la nueva fecha
@@ -37,7 +41,40 @@ const detectarClic = (event) => {
   
  //miramos el nuevo array
   console.log("click---", values.value);
+  // esto devuelve un objeto
+  console.log(typeof(values.value));
+
 };
+//boton llamada
+const agregarFecha = () => {
+    console.log("click agregar",values.value);
+   guardarStorage(values.value);
+};
+
+
+//Guardaremos en local storage (convertir objeto a string)
+
+function guardarStorage(values) {
+  localStorage.setItem("diasSeleccion", JSON.stringify([...values]));
+}
+
+function obtenerStorage() {
+  const storedValues = JSON.parse(localStorage.getItem("diasSeleccion"));
+  console.log("datos recuperados", storedValues);
+  values.value.splice(0, values.value.length); // Vaciar el array values.value
+  if (Array.isArray(storedValues) && storedValues.length > 0) {
+    values.value.push(...storedValues); // Agregar los nuevos valores al array values.value
+  }
+}
+
+
+onMounted(() => {
+  obtenerStorage();
+  
+});
+
+
+
 
 </script>
 
