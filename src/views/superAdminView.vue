@@ -1,6 +1,7 @@
 <script setup>
 import LateralBar from '../components/LateralBar.vue';
 import WorkerAdmin from '../components/WorkerAdmin.vue';
+import PrincipalAdmin from '../components/PrincipalAdmin.vue';
 </script>
 
 <template >
@@ -10,6 +11,7 @@ import WorkerAdmin from '../components/WorkerAdmin.vue';
   <div class="TodoContenido">
     <h1>Super Admin</h1>
     <WorkerAdmin/>
+    <PrincipalAdmin />
   </div>
 </template>
 
