@@ -13,12 +13,20 @@
       </div>
 
       <div class="options__menu">
-        <RouterLink to="/">
+      <!-- Mostrar LOGIN si no hay usuario en el Session Storage -->
+      <RouterLink v-if="!userInSessionStorage" to="/">
           <div class="option">
             <i class="fa-solid fa-right-to-bracket"></i>
             <h4>Login</h4>
           </div>
         </RouterLink>
+        <!-- Mostrar LOGOUT si hay usuario en el Session Storage -->
+        <a v-if="userInSessionStorage" @click="logout">
+          <div class="option">
+            <i class="fa-solid fa-right-to-bracket"></i>
+            <h4>Logout</h4>
+          </div>
+        </a>
         <RouterLink to="/empleado">
           <div class="option">
             <i class="fa-regular fa-user"></i>
@@ -111,11 +119,26 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('resize', handleResize)
 })
-</script>
 
-<style>
-/* Agrega tus estilos CSS aquí */
-</style>
+// Define una referencia para el usuario en el Session Storage
+const userInSessionStorage = ref(false);
+
+// Lógica para comprobar si existe el usuario en el Session Storage
+onMounted(() => {
+  const user = sessionStorage.getItem('userLS');
+  if (user) {
+    userInSessionStorage.value = true;
+  }
+});
+
+// Función para cerrar sesión (eliminar usuario del Session Storage)
+function logout() {
+  sessionStorage.clear();
+  userInSessionStorage.value = false;
+  // Aquí puedes redireccionar a la página de inicio o a donde desees después del logout
+  window.location.href = "/";
+}
+</script>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
