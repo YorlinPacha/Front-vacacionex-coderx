@@ -15,7 +15,7 @@
       <img class="imagen-fondo-login" src="../assets/img/fondo-form-login.png" alt="fondo naranja trapecio" />
     </div>
     <div class="form-login row justify-content-center">
-      <div class="surface-card shadow-2 border-round d-flex flex-column justify-content-center w-25">
+      <div class="surface-card shadow-2 border-round d-flex flex-column justify-content-center w-100">
         <p class="icon mb-3">
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-person-circle"
           viewBox="0 0 16 16">
@@ -26,9 +26,9 @@
       </p>
     
           <div class="d-flex flex-column justify-content-center">           
-              <input id="email1" v-model="loginData.login_email" type="email" placeholder="Usuario" class="w-75 mb-3 mx-auto p-2" />            
-              <input id="password1" v-model="loginData.passw" type="password" placeholder="Contraseña" class="w-75 mb-3 mx-auto p-2" />
-              <button label="Entra" @click="loginUser(loginData)" icon="pi pi-user" class="btn w-50 mx-auto">LOGIN</button>
+              <input id="email1" v-model="loginData.login_email" type="email" placeholder="Usuario" class="w-full mb-3 mx-auto p-2" />            
+              <input id="password1" v-model="loginData.passw" type="password" placeholder="Contraseña" class="w-full mb-3 mx-auto p-2" />
+              <button label="Entra" @click="loginUser(loginData)" icon="pi pi-user" class="btn w-full  mx-auto">LOGIN</button>
           </div>
           
       </div>
@@ -48,17 +48,17 @@
 }
 
 #image1 {
-  margin-right: -1.4rem;
+  margin-right: -0.8rem;
   z-index: 2;
 }
 
 #image2 {
-  margin-left: -1rem;
+  margin-left: -0.5rem;
   z-index: 2;
 }
 .div-login-title {
   background-color: #ffff;
-  width: 42vw;
+  width: 45vw;
   text-align: center;
   border-radius: 1rem;
 }
@@ -110,14 +110,31 @@ margin-top: 1rem;
 }
 
 @media screen and (max-width: 760px) {
-.body_move {
+#image1 {
+  margin-right: -0.8rem;
+}
+
+#image2 {
+  margin-left: -0.5rem;
+}
+.div-login-title {
+  width: 75vw;
+}
+
+.login-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+
+/* .body_move {
   margin-left: 0px;
 }
 
 .menu__side_move {
   width: 80px;
   left: -80px;
-}
+} */
 }
 </style>
 
