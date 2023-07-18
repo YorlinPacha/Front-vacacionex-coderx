@@ -17,20 +17,21 @@
     <div class="form-login row justify-content-center">
       <div class="surface-card shadow-2 border-round d-flex flex-column justify-content-center w-25">
         <p class="icon mb-3">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-person-circle"
-          viewBox="0 0 16 16">
-          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-          <path fill-rule="evenodd"
-            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-        </svg>
-      </p>
-    
-          <div class="d-flex flex-column justify-content-center">           
-              <input id="email1" v-model="loginData.login_email" type="email" placeholder="Usuario" class="w-75 mb-3 mx-auto p-2" />            
-              <input id="password1" v-model="loginData.passw" type="password" placeholder="Contraseña" class="w-75 mb-3 mx-auto p-2" />
-              <button label="Entra" @click="loginUser(loginData)" icon="pi pi-user" class="btn w-50 mx-auto">LOGIN</button>
-          </div>
-          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+            <path fill-rule="evenodd"
+              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+          </svg>
+        </p>
+
+        <div class="d-flex flex-column justify-content-center">
+          <input id="email1" v-model="loginData.login_email" type="email" placeholder="Usuario"
+            class="w-75 mb-3 mx-auto p-2" />
+          <input id="password1" v-model="loginData.passw" type="password" placeholder="Contraseña"
+            class="w-75 mb-3 mx-auto p-2" />
+          <button label="Entra" @click="loginUser(loginData)" icon="pi pi-user" class="btn w-50 mx-auto">LOGIN</button>
+        </div>
+
       </div>
 
     </div>
@@ -56,6 +57,7 @@
   margin-left: -1rem;
   z-index: 2;
 }
+
 .div-login-title {
   background-color: #ffff;
   width: 42vw;
@@ -66,20 +68,23 @@
 .login-title {
   text-align: center;
 }
+
 .login-title-image {
   width: 9vw;
 }
-.div-parent-login{
+
+.div-parent-login {
   position: relative;
   margin-bottom: 8rem;
 }
 
 .imagen-fondo-login {
   width: 33vw;
-  
+
 }
+
 .div-imagen-fondo-login {
-  position:absolute;
+  position: absolute;
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -88,36 +93,38 @@
 }
 
 .bi {
-color: rgb(27, 111, 171);
-background-color: rgb(171, 225, 250);
+  color: rgb(27, 111, 171);
+  background-color: rgb(171, 225, 250);
 }
 
 .bi-person-circle {
-width: 8rem;
-height: 8rem;
-border-radius: 4rem;
-margin-bottom: 2.5rem;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 4rem;
+  margin-bottom: 2.5rem;
 }
-.icon{
-margin: auto;
+
+.icon {
+  margin: auto;
 }
+
 .btn {
-background-color: #4311B9;
-border-radius: 1rem;
-padding: 0.5rem 2rem;
-color: white;
-margin-top: 1rem;
+  background-color: #4311B9;
+  border-radius: 1rem;
+  padding: 0.5rem 2rem;
+  color: white;
+  margin-top: 1rem;
 }
 
 @media screen and (max-width: 760px) {
-.body_move {
-  margin-left: 0px;
-}
+  .body_move {
+    margin-left: 0px;
+  }
 
-.menu__side_move {
-  width: 80px;
-  left: -80px;
-}
+  .menu__side_move {
+    width: 80px;
+    left: -80px;
+  }
 }
 </style>
 
@@ -125,19 +132,13 @@ margin-top: 1rem;
 import { createLogin } from '../controllers/WorkersController';
 import { ref } from 'vue';
 
-
 const loginData = ref({
   login_email: '',
   passw: ''
 });
 
-
 const loginUser = async () => {
-  await createLogin(loginData.value);  
+  await createLogin(loginData.value);
 };
-
-
-
-
 
 </script>

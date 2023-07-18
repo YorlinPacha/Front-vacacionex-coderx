@@ -2,7 +2,7 @@
   <div class="body" :class="{ body_move: isMoveActive }">
     <header>
       <div class="icon__menu">
-        <i class="fas fa-bars" id="btn_open"></i>
+        <i class="fas fa-bars" id="btn_open" @click="toggleMenu"></i>
       </div>
     </header>
 
@@ -11,137 +11,93 @@
         <i class="fa-solid fa-code"></i>
         <h4>Coderx</h4>
       </div>
-<!-- -------------------------------------------------- -->
+
       <PerfilComponent />
 
-<!-- ----------------------------------------------------------- -->
       <div class="options__menu">
-      <!-- Mostrar LOGIN si no hay usuario en el Session Storage -->
-      <RouterLink v-if="!userInSessionStorage" to="/">
+        <RouterLink v-if="!user" to="/">
           <div class="option">
             <i class="fa-solid fa-right-to-bracket"></i>
             <h4>Login</h4>
           </div>
         </RouterLink>
-        <!-- Mostrar LOGOUT si hay usuario en el Session Storage -->
-        <a v-if="userInSessionStorage" @click="logout">
+
+        <a v-if="user" @click="logout">
           <div class="option">
             <i class="fa-solid fa-right-to-bracket"></i>
             <h4>Logout</h4>
           </div>
         </a>
-        <RouterLink to="/empleado">
+
+        <RouterLink to="/empleado" v-if="user && user.position === 'user'">
           <div class="option">
             <i class="fa-regular fa-user"></i>
             <h4>Empleado</h4>
           </div>
         </RouterLink>
 
-        <RouterLink to="/encargado">
+        <RouterLink to="/encargado" v-if="user && user.position === 'overviewer'">
           <div class="option">
             <i class="fa-solid fa-user-secret"></i>
             <h4>Encargado</h4>
           </div>
         </RouterLink>
 
-        <RouterLink to="/superAdmin">
+        <RouterLink to="/superAdmin" v-if="user && user.position === 'root'">
           <div class="option">
             <i class="fa-solid fa-toolbox"></i>
             <h4>superAdmin</h4>
           </div>
         </RouterLink>
-
-        <!-- <a href="#">
-          <div class="option">
-            <i class="far fa-sticky-note" title="Blog"></i>
-            <h4>Blog</h4>
-          </div>
-        </a>
-
-        <a href="#">
-          <div class="option">
-            <i class="far fa-id-badge" title="Contacto"></i>
-            <h4>Contacto</h4>
-          </div>
-        </a> -->
       </div>
     </div>
-    <!-- ------------------------------------------------Aqui abajo se agregara todo el contenido que se vera en la vista ---------------------- -->
+
     <main class="cajaContenidoMain">
       <h1 class="titulo">Abrimos rutas inclusivas al talento digital</h1>
       <br />
       <p class="parrafo">
-        Porque hoy se construye el mundo digital en el que viviremostodas y todos
+        Porque hoy se construye el mundo digital en el que viviremos todas y todos
       </p>
       <br />
-      <!-- <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident adipisci beatae impedit
-        quia, deleniti quasi sequi iusto exercitationem nihil nulla, laboriosam dolore corrupti fuga
-        officiis? Odit a mollitia id magnam amet delectus quia blanditiis reprehenderit explicabo
-        eveniet! Rem voluptatum explicabo ipsum quae, dolorum, laudantium doloribus a, illum saepe
-        sapiente accusantium dicta reiciendis? Amet iure porro voluptatum error fugit odit volupta?
-      </p> -->
     </main>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue';
 import PerfilComponent from './PerfilComponent.vue';
 
-const isMenuOpen = ref(false)
-const isMoveActive = ref(false)
+const isMenuOpen = ref(false);
+const isMoveActive = ref(false);
+const user = ref(JSON.parse(sessionStorage.getItem('userLS')));
 
-function openCloseMenu() {
-  isMenuOpen.value = !isMenuOpen.value
-  isMoveActive.value = !isMoveActive.value
-  console.log('abre y cierra')
+function toggleMenu() {
+  isMenuOpen.value = !isMenuOpen.value;
+  isMoveActive.value = !isMoveActive.value;
 }
 
-onMounted(() => {
-  document.getElementById('btn_open').addEventListener('click', openCloseMenu)
-})
-
-onUnmounted(() => {
-  document.getElementById('btn_open').removeEventListener('click', openCloseMenu)
-})
-
-const handleResize = () => {
-  if (window.innerWidth > 760) {
-    isMenuOpen.value = false
-  } else {
-    isMenuOpen.value = true
-  }
-}
-
-window.addEventListener('resize', handleResize)
-
-onMounted(() => {
-  handleResize()
-})
-
-onUnmounted(() => {
-  window.removeEventListener('resize', handleResize)
-})
-
-// Define una referencia para el usuario en el Session Storage
-const userInSessionStorage = ref(false);
-
-// Lógica para comprobar si existe el usuario en el Session Storage
-onMounted(() => {
-  const user = sessionStorage.getItem('userLS');
-  if (user) {
-    userInSessionStorage.value = true;
-  }
-});
-
-// Función para cerrar sesión (eliminar usuario del Session Storage)
 function logout() {
   sessionStorage.clear();
-  userInSessionStorage.value = false;
-  // Aquí puedes redireccionar a la página de inicio o a donde desees después del logout
   window.location.href = "/";
 }
+
+onMounted(() => {
+  handleResize();
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', handleResize);
+});
+
+function handleResize() {
+  if (window.innerWidth > 760) {
+    isMenuOpen.value = false;
+  } else {
+    isMenuOpen.value = true;
+  }
+}
+
+window.addEventListener('resize', handleResize);
 </script>
 
 <style scoped>
