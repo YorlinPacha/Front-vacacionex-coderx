@@ -24,13 +24,16 @@
   </div>
 </template>
 <script setup>
+import * as VacationController from '../controllers/VacationsController'
 import { CalendarComponent as EjsCalendar } from '@syncfusion/ej2-vue-calendars'
 import { onMounted, ref } from 'vue'
 const data = [{minDate: new Date("01/01/2023"), 
                   maxDate: new Date("31/12/2024")}];
 const isMultiSelection = true
-const values = ref([])
-
+const values = ref([]);
+let vacation =ref({});
+const SessionUser= JSON.parse(sessionStorage.getItem('userLS'));
+const id_user= SessionUser.id;
 onMounted(() => {
   obtenerStorage()
 })
@@ -79,14 +82,23 @@ const detectarClic = (event) => {
 //boton llamada
 const agregarFecha = () => {
   console.log('click agregar', values.value)
-  guardarStorage(values.value)
+  guardarLista(values.value)
 }
 
 //Guardaremos en local storage (convertir objeto a string)
 
-function guardarStorage(values) {
-  sessionStorage.setItem('diasSeleccion', JSON.stringify([...values]))
+function guardarLista(values) {
+  sessionStorage.setItem('diasSeleccion', JSON.stringify([...values]));
+  vacation ={
+    "id_user": id_user,
+    "approved": "FALSE",
+    "list_days": JSON.stringify([...values])
+  }
+  console.log(vacation);
+VacationController.createVacation(vacation)
 }
+
+
 
 function obtenerStorage() {
   const storedValues = JSON.parse(sessionStorage.getItem('diasSeleccion'))

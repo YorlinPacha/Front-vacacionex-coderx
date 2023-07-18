@@ -25,15 +25,15 @@ export async function createLogin(loginData) {
       switch (data.worker.position) {
         case 'overviewer':
           router.push('/encargado');
-          window.location.reload()
+          //window.location.reload()
           break;
         case 'root':
           router.push('/superAdmin');
-          window.location.reload()
+          //window.location.reload()
           break;
         default:
           router.push('/empleado');
-          window.location.reload()
+          //window.location.reload()
           break;
       }
      

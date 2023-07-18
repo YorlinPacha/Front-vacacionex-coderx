@@ -1,5 +1,4 @@
 <script setup>
-import LateralBar from '../components/LateralBar.vue';
 import CompoCalendar from '../components/CompoCalendar.vue';
 
 </script>
