@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-
+import LateralBar from './components/LateralBar.vue';
 </script>
 
 <template>
@@ -10,7 +10,7 @@ import { RouterLink, RouterView } from 'vue-router'
         <RouterLink to="/about">About</RouterLink>
       </nav>
   </header> -->
-
+<LateralBar/>
   <RouterView />
 </template>
 

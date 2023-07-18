@@ -5,7 +5,7 @@ import PrincipalAdmin from '../components/PrincipalAdmin.vue';
 </script>
 
 <template >
-  <LateralBar/>
+  <!-- <LateralBar/> -->
 
   <!-- -----------------Agregar todo tu contenido dentro del div class="TodoContenido"------------ -->
   <div class="TodoContenido">

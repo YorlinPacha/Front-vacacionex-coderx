@@ -28,21 +28,27 @@
         <td>{{ worker.department }}</td>
         <td>{{ worker.email }}</td>
         <td>{{ worker.passw }}</td>
-        <td><router-link :to="'/worker/' + worker.id" class="btn btn-primary">Modificar</router-link></td>
-        
+        <td>
+          <!-- Botón para Modificar -->
+          <button class="btn btn-primary" @click="Editar(worker.id)">Modificar</button>
+        </td>
       </tr>
     </tbody>
   </table>
+  
 </template>
     
 <script>
 import * as WorkersController from '../controllers/WorkersController';
 import { ref, onMounted } from 'vue';
+import router from '../router/index'; // Importa useRouter desde vue-router
 
 export default {
   setup() {
     const listWorkers = ref([]);
+    
 
+  
     const fetchData = async () => {
       let secret = sessionStorage.getItem("secretLS");
       let token = sessionStorage.getItem("tokenLS");
@@ -56,9 +62,8 @@ export default {
     return {
       listWorkers,
       Editar(workerId) {
-        // Implement your logic to edit a worker record here
-        console.log("Edit worker with ID:", workerId);
-        //Quiero abrir WorkerAdmin con el workerId de ese botón
+        // Redirige a la página de edición del trabajador
+        router.push({ path: `/worker/${workerId}` });
       },
       Eliminar(workerId) {
         // Implement your logic to delete a worker record here
