@@ -1,9 +1,9 @@
 <template>
   <div>
-    <a class="btn btn-primary" href="#" role="button"><router-link :to="'/worker/' + 0" class="btn btn-primary">Nuevo Trabajador</router-link></a>
-    <a class="btn btn-primary" href="#" role="button">Nuevo Calendario</a>
-    <a class="btn btn-primary" href="#" role="button">Tabla Calendario</a>
-    <a class="btn btn-primary" href="#" role="button">Tabla Trabajador</a>
+    <a class="btn btn-primary" href="#" role="button"><router-link :to="'/worker/' + 0" class="clasRouter">{{ $t('superAdmin.botonNewEmployee') }}</router-link></a>
+    <a class="btn btn-primary ms-3" href="#" role="button">Nuevo Calendario</a>
+    <a class="btn btn-primary ms-3" href="#" role="button">Tabla Calendario</a>
+    <a class="btn btn-primary ms-3" href="#" role="button">Tabla Trabajador</a>
   </div>
   <table class="table">
     <thead>
@@ -30,7 +30,7 @@
         <td>{{ worker.passw }}</td>
         <td>
           <!-- Botón para Modificar -->
-          <button class="btn btn-primary" @click="Editar(worker.id)">Modificar</button>
+          <button class="btn btn-primary" @click="Editar(worker.id)">{{ $t('superAdmin.botonModif') }}</button>
         </td>
       </tr>
     </tbody>
@@ -74,5 +74,13 @@ export default {
 };
 </script>
     
-<style scoped></style>
+<style scoped>
+.clasRouter{
+  color: #fff;
+  text-decoration: none;
+}
+.table{
+  margin-top: 2rem;
+}
+</style>
     

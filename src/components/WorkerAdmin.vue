@@ -1,17 +1,17 @@
 <template>
   <div class="container"> 
     <form id="contact">
-      <h3>EDITAR /ELIMINAR Usuario</h3>
+      <h3>{{ $t('workerAdmin.principalTitle') }}</h3>
       <div v-if="loaded">
-        <fieldset>
+        <fieldset class="cajaInputs">
           <div v-for="attribute in userAttributes" :key="attribute.name" class="form-field">
-  <label :for="attribute.name" class="label">{{ attribute.label }}</label>
-  <input :placeholder="attribute.label" :type="attribute.type" :tabindex="attribute.tabindex" :required="attribute.required" autofocus v-model="usuario[attribute.name]">
+  <!-- <label :for="attribute.name" class="label">{{ attribute.label }}</label> -->
+  <input :placeholder="attribute.label" :type="attribute.type" :tabindex="attribute.tabindex" :required="attribute.required" autofocus v-model="usuario[attribute.name]" class="input">
 </div>
       <!-- Botones para Actualizar o Nuevo -->
-      <button v-if="id !== '0'" class="btn" @click.prevent="enviarWorker(usuario, usuario.id)"> Actualizar </button>
-      <button v-else class="btn" @click.prevent="nuevoWorker(usuario)"> Nuevo </button>
-          <button class="btn" @click.prevent="eliminarWorker(usuario.id)">Eliminar</button>
+      <button v-if="id !== '0'" class="btn" @click.prevent="enviarWorker(usuario, usuario.id)">{{ $t('workerAdmin.botonUpdate') }}</button>
+      <button v-else class="btn" @click.prevent="nuevoWorker(usuario)"> {{ $t('workerAdmin.botonNew') }}</button>
+          <button class="btn" @click.prevent="eliminarWorker(usuario.id)">{{ $t('workerAdmin.botonDelete') }}</button>
         </fieldset>
       </div>
       <div v-else>
@@ -45,9 +45,9 @@ export default {
 
     const userAttributes = [
       { name: 'name', label: 'Nombre', type: 'text', tabindex: 1, required: true },
-      { name: 'position', label: 'Rol', type: 'text', tabindex: 2, required: true },
+      { name: 'position', label: 'Rol  (user - overviewer - root)', type: 'text', tabindex: 2, required: true },
       { name: 'department', label: 'Departamento', type: 'text', tabindex: 3, required: true },
-      { name: 'seniority', label: 'Antigüedad', type: 'text', tabindex: 5, required: true },
+      { name: 'seniority', label: 'Antigüedad  (DD/MM/AA)', type: 'text', tabindex: 5, required: true },
       { name: 'email', label: 'Email', type: 'text', tabindex: 6, required: true },
       { name: 'passw', label: 'Contraseña', type: 'text', tabindex: 7, required: true }
     ];
@@ -119,18 +119,10 @@ const nuevoWorker = async (usuario) => {
   text-rendering: optimizeLegibility;
 }
 
-body {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
-  font-weight: 100;
-  font-size: 12px;
-  line-height: 30px;
-  color: #777;
-  background-color: rgb(254, 210, 192);
-}
 
-main {
-  width:90%;
-}
+/* *{
+  border: 1px solid red;
+} */
 
 .text {
   height: 60%;
@@ -156,6 +148,8 @@ main {
   width: 100%;
   margin: 0 auto;
   position: relative;
+  display: flex;
+  justify-content: center;
   z-index: 1;
 }
 
@@ -181,13 +175,15 @@ main {
 }
 
 #contact {
+  width: 40rem;
   right: 10px;
   top:10px;
  
   padding: 25px;
-  margin: 150px 0;
+  margin: 10px 0;
   border-radius: 10px;
   box-shadow: 5px 10px 30px 1px rgba(0, 0, 0, 0.15);
+  text-align: center;
 }
 
 #contact h3 {
@@ -219,7 +215,7 @@ fieldset {
 #contact input[type="tel"],
 #contact input[type="url"],
 #contact select#profissao {
-  width: 100%;
+  width: 20rem;
   border: 1px solid #ccc;
   background: #FFF;
   margin: 0 0 5px;
@@ -306,8 +302,47 @@ color: rgb(255 0 0);
   width: 120px;
   margin-right: 10px;
 }
-input {
+/* input {
   flex: 1;
+} */
+
+.cajaInputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input {
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 2px 2px 7px 0 rgb(0, 0, 0, 0.2);
+  outline: none;
+  color: dimgray;
+  flex: 1;
+}
+
+.input:invalid {
+  animation: justshake 0.3s forwards;
+  color: red;
+}
+
+@keyframes justshake {
+  25% {
+    transform: translateX(5px);
+  }
+
+  50% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX-(5px);
+  }
 }
 
 </style>

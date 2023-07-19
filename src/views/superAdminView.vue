@@ -9,7 +9,6 @@ import PrincipalAdmin from '../components/PrincipalAdmin.vue';
 
   <!-- -----------------Agregar todo tu contenido dentro del div class="TodoContenido"------------ -->
   <div class="TodoContenido">
-    <h1>Super Admin</h1>
     <PrincipalAdmin />
   </div>
 </template>
@@ -18,7 +17,7 @@ import PrincipalAdmin from '../components/PrincipalAdmin.vue';
 .TodoContenido {
   margin: auto;
   padding: 11px;
-  border: .5px solid blue;
+  border: .5px solid #fff;
   width: 72%;
 }
 </style>

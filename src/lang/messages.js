@@ -20,6 +20,22 @@ export const messages = {
             ourWeb: 'Our Web',
             contact: 'Contact',
             foundation: 'Foundation'
+        },
+        //componente calendario
+        calendar:{
+            botonConf: 'Updated',
+        },
+        // componente superAdmin
+        superAdmin:{
+            botonModif: 'Change',
+            botonNewEmployee: 'New Employee',   
+        },
+        // componente workerAdmin
+        workerAdmin:{
+            principalTitle: 'User Panel',
+            botonNew: 'New',
+            botonDelete: 'Delete',
+            botonUpdate: 'Update'
         }
     },
 
@@ -44,6 +60,22 @@ export const messages = {
             ourWeb: 'Our Web',
             contact: 'Contact',
             foundation: 'Foundation'
+        },
+         //componente calendario
+         calendar:{
+            botonConf: 'Actualizar',
+        },
+         // componente superAdmin
+        superAdmin:{
+            botonModif: 'Modificar',
+            botonNewEmployee: 'Nuevo trabajador',   
+        },
+        // componente workerAdmin
+        workerAdmin:{
+            principalTitle: 'Panel Usuario',
+            botonNew: 'Nuevo',
+            botonDelete: 'Eliminar',
+            botonUpdate: 'Actualizar',
         }
     }
 }

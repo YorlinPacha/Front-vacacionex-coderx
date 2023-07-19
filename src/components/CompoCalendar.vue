@@ -12,7 +12,7 @@
       :min="data[0].minDate" 
       :max="data[0].maxDate"
     ></ejs-calendar>
-    <button class="agregarBoton" @click="agregarFecha">Confirmar</button>
+    <button class="agregarBoton" @click="agregarFecha">{{ $t('calendar.botonConf') }}</button>
     <!-- <ul>
       <li v-for="(fecha, index) in values" :key="index">{{ fecha }}</li>
     </ul> -->
