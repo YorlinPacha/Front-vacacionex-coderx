@@ -10,7 +10,7 @@
     <p class="descripcion">Consumidos</p> -->
   </div>
   <div v-else>
-    LOGUEATE
+    Loguèate
     <div class="spinner-border espiner" role="status">
           <span class="sr-only">Loading...</span>
           </div>

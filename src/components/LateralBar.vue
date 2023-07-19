@@ -12,7 +12,7 @@
         <h4>Coderx</h4>
       </div>
 
-      <PerfilComponent />
+      <PerfilComponent class="perfilLoading"/>
 
       <div class="options__menu">
         <RouterLink v-if="!user" to="/">
@@ -251,6 +251,11 @@ a.selected {
 
 .menu__side_move {
   width: 250px;
+}
+
+/* ---------componente loading */
+.perfilLoading{
+  margin-left: 1.7rem;
 }
 
 @media screen and (max-width: 760px) {
