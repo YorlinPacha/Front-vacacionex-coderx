@@ -116,14 +116,14 @@
 }
 
 @media screen and (max-width: 760px) {
-.body_move {
-  margin-left: 0px;
-}
+  .body_move {
+    margin-left: 0px;
+  }
 
-.menu__side_move {
-  width: 80px;
-  left: -80px;
-} */
+  .menu__side_move {
+    width: 80px;
+    left: -80px;
+  }
 }
 </style>
 

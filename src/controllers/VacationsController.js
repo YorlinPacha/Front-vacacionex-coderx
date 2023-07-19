@@ -12,33 +12,19 @@ export function getAllVacations(secret, token) {
     redirect: 'follow'
   };
 
-  return new Promise((resolve, reject) => {
-    fetch(url + "/vacations", requestOptions)
+  return fetch(url + "/vacations", requestOptions)
       .then(response => response.json())
       .then(data => {
         console.log(data);
-        resolve(data);
+        return data;
       })
       .catch(error => {
         console.error('Error al obtener las vacaciones:', error);
-        reject(error);
+        return error;
       });
-  });
-}
+  };
 
 // Obtener una vacación por ID
-export function getVacationById(vacationId) {
-  return fetch(url + `/vacations/${vacationId}`)
-    .then(response => response.json())
-    .then(data => {
-      console.log(data);
-      return data; // Devuelve los datos de la vacación
-    })
-    .catch(error => {
-      console.error('Error al obtener la vacación:', error);
-    });
-}
-
 // Crear una vacación
 export function createVacation(vacationData) {
   return fetch(url + '/vacations', {

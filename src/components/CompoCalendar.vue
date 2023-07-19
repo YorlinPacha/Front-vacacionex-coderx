@@ -1,5 +1,8 @@
 <template>
   <div class="control_wrapper">
+    <p>
+      {{vacation}}
+    </p>
     <ejs-calendar
       @click="detectarClic"
       :isMultiSelection="isMultiSelection"
@@ -21,6 +24,7 @@
     </div>
   
   </div>
+  
   </div>
 </template>
 <script setup>
@@ -34,11 +38,15 @@ const values = ref([]);
 let vacation =ref({});
 const SessionUser= JSON.parse(sessionStorage.getItem('userLS'));
 const id_user= SessionUser.id;
+async function obtenerDatosSQL() {
+  vacation.value = await VacationController.getAllVacations();
+  vacation=vacation.value.find(item => item.id_user === id_user);
+}
+
 onMounted(() => {
   obtenerStorage()
+  obtenerDatosSQL()
 })
-
-
 
 console.log('Valores iniciales:---', values.value)
 
@@ -109,9 +117,10 @@ function obtenerStorage() {
   }
 }
 
-onMounted(() => {
-  obtenerStorage()
-})
+// onMounted(() => {
+
+//   obtenerStorage()
+// })
 
 
 function disableDate (args) {
