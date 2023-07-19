@@ -4,7 +4,7 @@
       <img src="../assets/img/image1-login.png" alt="imagen icono somosf5 lila">
     </div>
     <div class="div-login-title">
-      <h1 class="login-title">Gestion de vacaciones Somos F5</h1>
+      <h1 class="login-title">{{ $t("messageLogin.title3") }}</h1>
     </div>
     <div class="login-title-image">
       <img id="image2" src="../assets/img/image2-login.png" alt="imagen icono somosf5 turquesa">

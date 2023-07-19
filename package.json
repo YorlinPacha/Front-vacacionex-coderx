@@ -13,6 +13,7 @@
     "@syncfusion/ej2-vue-calendars": "^22.1.38",
     "@syncfusion/ej2-vue-grids": "^22.1.38",
     "vue": "^3.3.4",
+    "vue-i18n": "^9.2.2",
     "vue-router": "^4.2.2"
   },
   "devDependencies": {

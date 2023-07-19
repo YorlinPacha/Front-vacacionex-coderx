@@ -32,14 +32,14 @@
         <RouterLink to="/empleado" v-if="user && user.position === 'user'">
           <div class="option">
             <i class="fa-regular fa-user"></i>
-            <h4>Empleado</h4>
+            <h4>{{ $t("lateralBar.employee")}}</h4>
           </div>
         </RouterLink>
 
         <RouterLink to="/encargado" v-if="user && user.position === 'overviewer'">
           <div class="option">
             <i class="fa-solid fa-user-secret"></i>
-            <h4>Encargado</h4>
+            <h4>{{ $t("lateralBar.manager")}}</h4>
           </div>
         </RouterLink>
 
@@ -53,10 +53,10 @@
     </div>
 
     <main class="cajaContenidoMain">
-      <h1 class="titulo">Abrimos rutas inclusivas al talento digital</h1>
+      <h1 class="titulo">{{ $t("lateralBar.title1") }}</h1>
       <br />
       <p class="parrafo">
-        Porque hoy se construye el mundo digital en el que viviremos todas y todos
+        {{ $t("lateralBar.title2") }}
       </p>
       <br />
     </main>

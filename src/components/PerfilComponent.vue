@@ -3,14 +3,16 @@
   <div v-if="Object.keys(userData).length > 0" class="cardPerfil justify-content-left">    <!-- <div class="card-border-top"></div>
     <div class="img" ></div> -->
 
-    <span>Nombre:{{ userData.name }}</span>
-    <p class="descripcion">DEPT.:{{ userData.department }}</p>
-    <p class="descripcion">ANTIG.:{{ userData.seniority }}</p> 
+    <span>{{ $t("lateralBar.name", {name:userData.name})}}</span>
+    <!-- <span>Nombre:{{ userData.name }}</span> -->
+    <p class="descripcion">{{ $t("lateralBar.department", {department:userData.department})}}</p>
+    <!-- <p class="descripcion">DEPT.:{{ userData.department }}</p> -->
+    <p class="descripcion">{{ $t("lateralBar.seniority", {seniority:userData.seniority})}}</p> 
     <!-- <p class="descripcion">Vacaciones</p>
     <p class="descripcion">Consumidos</p> -->
   </div>
   <div v-else>
-    Loguèate
+    Login...
     <div class="spinner-border espiner" role="status">
           <span class="sr-only">Loading...</span>
           </div>
