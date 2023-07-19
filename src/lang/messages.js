@@ -42,7 +42,7 @@ export const messages = {
     es:{
         //Login view
         messageLogin:{
-            title3: 'Gestion de vacaciones somo F5',
+            title3: 'Gestion de vacaciones somos F5',
           
         },
         //barra lateral
