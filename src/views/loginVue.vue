@@ -92,7 +92,7 @@
 
 #imageInde {
   z-index: -2;
-  margin-left: -5rem;
+  margin-left: -13rem;
 }
 
 .div-login-title {
@@ -106,6 +106,9 @@
 
 .login-title {
   text-align: center;
+    font-weight: bold;
+    font-size: 3.5rem;
+    max-width: 50rem;
 }
 
 
