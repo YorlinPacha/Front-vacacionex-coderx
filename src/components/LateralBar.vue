@@ -10,9 +10,28 @@
       <div class="name__page">
         <i class="fa-solid fa-code"></i>
         <h4>Coderx</h4>
+           <!-- -------------------------------------- -->
+      <div class="menuLang">
+        <!-- 12) ULTIMO: vinculando el entorno local con  v-model="$i18n.locale"-->
+        <select v-model="$i18n.locale" class="optiosLanguage">
+          <!-- listado de forma dinamica ($i18n  incluye todas las informaciones sobre la configuracion)-->
+          <!-- $i18n.availableLocales = por cada uno de los idiomas disponibles en nuestro sistema -->
+          <!-- la clave seria el contenido local - locale-en , local-es .. etc-->
+          <option
+          class="optiosLanguage"
+            v-for="locale in $i18n.availableLocales"
+            :key="`locale-$(locale)`"
+            :value="locale"
+          >
+            {{ locale }}
+          </option>
+        </select>
       </div>
+      <!-- -------------------------------------- -->
+      </div>
+   
 
-      <PerfilComponent class="perfilLoading"/>
+      <PerfilComponent class="perfilLoading" />
 
       <div class="options__menu">
         <RouterLink v-if="!user" to="/">
@@ -32,14 +51,14 @@
         <RouterLink to="/empleado" v-if="user && user.position === 'user'">
           <div class="option">
             <i class="fa-regular fa-user"></i>
-            <h4>{{ $t("lateralBar.employee")}}</h4>
+            <h4>{{ $t('lateralBar.employee') }}</h4>
           </div>
         </RouterLink>
 
         <RouterLink to="/encargado" v-if="user && user.position === 'overviewer'">
           <div class="option">
             <i class="fa-solid fa-user-secret"></i>
-            <h4>{{ $t("lateralBar.manager")}}</h4>
+            <h4>{{ $t('lateralBar.manager') }}</h4>
           </div>
         </RouterLink>
 
@@ -53,10 +72,10 @@
     </div>
 
     <main class="cajaContenidoMain">
-      <h1 class="titulo">{{ $t("lateralBar.title1") }}</h1>
+      <h1 class="titulo">{{ $t('lateralBar.title1') }}</h1>
       <br />
       <p class="parrafo">
-        {{ $t("lateralBar.title2") }}
+        {{ $t('lateralBar.title2') }}
       </p>
       <br />
     </main>
@@ -64,40 +83,40 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
-import PerfilComponent from './PerfilComponent.vue';
+import { ref, onMounted, onUnmounted } from 'vue'
+import PerfilComponent from './PerfilComponent.vue'
 
-const isMenuOpen = ref(false);
-const isMoveActive = ref(false);
-const user = ref(JSON.parse(sessionStorage.getItem('userLS')));
+const isMenuOpen = ref(false)
+const isMoveActive = ref(false)
+const user = ref(JSON.parse(sessionStorage.getItem('userLS')))
 
 function toggleMenu() {
-  isMenuOpen.value = !isMenuOpen.value;
-  isMoveActive.value = !isMoveActive.value;
+  isMenuOpen.value = !isMenuOpen.value
+  isMoveActive.value = !isMoveActive.value
 }
 
 function logout() {
-  sessionStorage.clear();
-  window.location.href = "/";
+  sessionStorage.clear()
+  window.location.href = '/'
 }
 
 onMounted(() => {
-  handleResize();
-});
+  handleResize()
+})
 
 onUnmounted(() => {
-  window.removeEventListener('resize', handleResize);
-});
+  window.removeEventListener('resize', handleResize)
+})
 
 function handleResize() {
   if (window.innerWidth > 760) {
-    isMenuOpen.value = false;
+    isMenuOpen.value = false
   } else {
-    isMenuOpen.value = true;
+    isMenuOpen.value = true
   }
 }
 
-window.addEventListener('resize', handleResize);
+window.addEventListener('resize', handleResize)
 </script>
 
 <style scoped>
@@ -116,11 +135,11 @@ main {
   text-align: center;
   /* border: 1px solid red; */
 }
-.titulo{
+.titulo {
   font-size: 3rem;
   font-family: 'crash';
 }
-.parrafo{
+.parrafo {
   font-size: 2rem;
   font-family: 'open Sans', sans-serif;
 }
@@ -254,15 +273,23 @@ a.selected {
 }
 
 /* ---------componente loading */
-.perfilLoading{
+.perfilLoading {
   margin-left: 1.7rem;
+}
+/* ------------- menu lenguage */
+.menuLang{
+  margin-left: 1rem;
+}
+.optiosLanguage{
+  background-color: #fed2c0;
+  color: #343434;
 }
 
 @media screen and (max-width: 760px) {
   .body_move {
     margin-left: 4rem;
   }
-  .icon__menu{ 
+  .icon__menu {
     margin-left: 0rem;
   }
 

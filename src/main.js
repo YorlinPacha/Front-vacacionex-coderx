@@ -10,8 +10,8 @@ import {messages} from './lang/messages'
 registerLicense("Ngo9BigBOggjHTQxAR8/V1NGaF5cXmdCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdgWXhfcnRWR2BeVENyW0c=")
 
 const i18n = createI18n({
-    locale: 'en',
-    fallbackLocale: 'en',
+    locale: 'es',
+    fallbackLocale: 'es',
     messages
 })
 const app = createApp(App)
