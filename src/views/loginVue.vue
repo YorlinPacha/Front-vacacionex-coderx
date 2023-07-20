@@ -39,14 +39,14 @@
               id="email1"
               v-model="loginData.login_email"
               type="email"
-              placeholder="Usuario"
+              :placeholder="$t('messageLogin.placeholderUser')"
               class="w-full mb-3 mx-auto p-2"
             />
             <input
               id="password1"
               v-model="loginData.passw"
               type="password"
-              placeholder="Contraseña"
+              :placeholder="$t('messageLogin.placeholderPsw')"
               class="w-full mb-3 mx-auto p-2"
             />
             <button
@@ -172,6 +172,51 @@
     width: 80px;
     left: -80px;
   }
+  
+.login-title {
+    font-size: 2rem;
+    max-width: 12rem;
+}
+
+.login-title-image {
+  width: 10rem;
+}
+
+#imageEstrella {
+  margin-left: 7rem;
+  width: 5rem;
+}
+
+#imageInde {
+  margin-left: -2rem;
+  width: 5rem;
+
+}
+
+.div-parent-login {
+  width: 22rem;
+}
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .login-title {
+    max-width: 20rem;
+}
+
+  
+#imageEstrella {
+  width: 10rem;
+  margin-left: 15rem;
+
+}
+
+#imageInde {
+  width: 10rem;
+  margin-left: -5rem;
+
+}
+
 }
 </style>
 
