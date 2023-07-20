@@ -96,7 +96,7 @@
 }
 
 .div-login-title {
-  background-color: #ffff;
+  /* background-color: #ffff; */
   width: auto;
   text-align: center;
   border-radius: 1rem;
@@ -188,3 +188,4 @@ const loginUser = async () => {
   await createLogin(loginData.value)
 }
 </script>
+npm run dev
