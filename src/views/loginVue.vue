@@ -175,6 +175,7 @@
   
 .login-title {
     font-size: 2rem;
+    max-width: 12rem;
 }
 
 .login-title-image {
@@ -183,10 +184,13 @@
 
 #imageEstrella {
   margin-left: 7rem;
+  width: 5rem;
 }
 
 #imageInde {
-  margin-left: -7rem;
+  margin-left: -2rem;
+  width: 5rem;
+
 }
 
 .div-parent-login {
