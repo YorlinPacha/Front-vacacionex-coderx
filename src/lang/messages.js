@@ -3,6 +3,8 @@ export const messages = {
         //Login view
         messageLogin:{
             title3: 'Vacation management Somos F5',
+            placeholderUser: 'User',
+            placeholderPsw: 'Password'
             
         },
         //barra lateral
@@ -43,6 +45,8 @@ export const messages = {
         //Login view
         messageLogin:{
             title3: 'Gestion de vacaciones somos F5',
+            placeholderUser: 'Usuario',
+            placeholderPsw: 'Contraseña'
           
         },
         //barra lateral

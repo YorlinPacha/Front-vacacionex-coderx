@@ -39,14 +39,14 @@
               id="email1"
               v-model="loginData.login_email"
               type="email"
-              placeholder="Usuario"
+              :placeholder="$t('messageLogin.placeholderUser')"
               class="w-full mb-3 mx-auto p-2"
             />
             <input
               id="password1"
               v-model="loginData.passw"
               type="password"
-              placeholder="Contraseña"
+              :placeholder="$t('messageLogin.placeholderPsw')"
               class="w-full mb-3 mx-auto p-2"
             />
             <button
