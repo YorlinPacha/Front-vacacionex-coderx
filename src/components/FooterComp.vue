@@ -1,3 +1,57 @@
+<template>
+  <footer>
+      <div class="page-container">
+        <div class="footer-content">
+          <div class="footer-logo-box">
+            <a href="/" aria-current="page" class="menu-brand-link w-inline-block w--current"></a>
+            <div class="text-14-22">
+              Fundación Somos F5<br />Avinguda Bogatell, 82 Bajos<br />Barcelona, 08005<br /><a
+                href="mailto:info@somosf5.org"
+                >info@somosf5.org</a
+              >
+            </div>
+          </div>
+          <div class="footer-links-box">
+            <div class="footer-links-item">
+              <div class="heading-18-26">{{ $t('footer.ourWeb') }}</div>
+              <a href="https://www.somosf5.org/" class="footer-links-link">Somos F5</a>
+            </div>
+            <div class="footer-links-item">
+              <div class="heading-18-26">{{ $t('footer.contact') }}</div>
+              <a href="https://www.somosf5.org/contacto" class="footer-links-link">Hablanos</a>
+            </div>
+            <div class="footer-links-item">
+              <div class="heading-18-26">{{ $t('footer.foundation') }}</div>
+              <a href="https://www.somosf5.org/about" class="footer-links-link">Sobre F5</a>
+            </div>
+          </div>
+          <div class="social">
+            <a
+              href="https://www.instagram.com/somosf5_/"
+              target="_blank"
+              class="icon-instagram w-inline-block"
+            ></a
+            ><a
+              href="https://twitter.com/somosf5_"
+              target="_blank"
+              class="icon-twitter w-inline-block"
+            ></a
+            ><a
+              href="https://www.linkedin.com/company/somos-f5/"
+              target="_blank"
+              class="icon-linkedin w-inline-block"
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer> 
+</template>
+
+<script lang="ts" setup>
+
+</script>
+
+<style scoped>
 
 html {
     -ms-text-size-adjust: 100%;
@@ -6290,3 +6344,5 @@ html {
     font-style: normal;
     font-display: swap;
   }
+
+</style>
