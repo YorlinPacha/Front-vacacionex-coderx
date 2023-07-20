@@ -57,9 +57,9 @@ export const messages = {
         },
          //Footer
          footer:{
-            ourWeb: 'Our Web',
-            contact: 'Contact',
-            foundation: 'Foundation'
+            ourWeb: 'Nuestra Web',
+            contact: 'Contacto',
+            foundation: 'Fundacion'
         },
          //componente calendario
          calendar:{

@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import LateralBar from './components/LateralBar.vue';
+import FooterComp from './components/FooterComp.vue';
 </script>
 
 <!-- <template>
@@ -18,6 +19,7 @@ import LateralBar from './components/LateralBar.vue';
   <div id="app">
     <LateralBar />
     <router-view />
+    <FooterComp />
   </div>
 </template>
 
