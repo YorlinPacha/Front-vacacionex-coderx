@@ -200,10 +200,23 @@
 
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  .div-login-title {
-  padding: 3rem;
+  .login-title {
+    max-width: 20rem;
 }
+
   
+#imageEstrella {
+  width: 10rem;
+  margin-left: 15rem;
+
+}
+
+#imageInde {
+  width: 10rem;
+  margin-left: -5rem;
+
+}
+
 }
 </style>
 
