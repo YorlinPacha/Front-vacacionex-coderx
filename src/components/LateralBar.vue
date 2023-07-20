@@ -297,5 +297,12 @@ a.selected {
     width: 80px;
     left: -80px;
   }
+
+.titulo, .parrafo {
+  margin-left: -5rem;
+}
+
+
+
 }
 </style>
