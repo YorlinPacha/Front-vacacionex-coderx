@@ -172,6 +172,34 @@
     width: 80px;
     left: -80px;
   }
+  
+.login-title {
+    font-size: 2rem;
+}
+
+.login-title-image {
+  width: 10rem;
+}
+
+#imageEstrella {
+  margin-left: 7rem;
+}
+
+#imageInde {
+  margin-left: -7rem;
+}
+
+.div-parent-login {
+  width: 22rem;
+}
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .div-login-title {
+  padding: 3rem;
+}
+  
 }
 </style>
 
