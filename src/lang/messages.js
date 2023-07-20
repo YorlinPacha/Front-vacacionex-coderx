@@ -19,7 +19,9 @@ export const messages = {
         footer:{
             ourWeb: 'Our Web',
             contact: 'Contact',
-            foundation: 'Foundation'
+            foundation: 'Foundation',
+            contactDescrip: 'Let`s Chat',
+            foundationDescrip: 'About F5',
         },
         //componente calendario
         calendar:{
@@ -59,7 +61,9 @@ export const messages = {
          footer:{
             ourWeb: 'Nuestra Web',
             contact: 'Contacto',
-            foundation: 'Fundacion'
+            foundation: 'Fundación',
+            contactDescrip: 'Háblemos',
+            foundationDescrip: 'Sobre F5',
         },
          //componente calendario
          calendar:{
@@ -76,6 +80,47 @@ export const messages = {
             botonNew: 'Nuevo',
             botonDelete: 'Eliminar',
             botonUpdate: 'Actualizar',
+        }
+    },
+    eus:{
+        //Login view
+        messageLogin:{
+            title3: 'Oporren kudeaketa F5 Gara',
+          
+        },
+        //barra lateral
+        lateralBar:{
+            title1: 'Ibilbide inklusiboak zabaltzen dizkiogu talentu digitalari', 
+            title2: 'Gaur egun guztiok biziko garen mundu digitala eraikitzen ari delako',
+            name: 'Izena: {name}',
+            department: 'Saila: {department}',
+            seniority: 'Antzinatasuna: {seniority}',
+            employee: 'Langilea',
+            manager: 'Arduraduna'
+        },
+         //Footer
+         footer:{
+            ourWeb: 'Guere web orria',
+            contact: 'CKontaktua',
+            foundation: 'Fundazioa',
+            contactDescrip: 'Hitz egin dezagun',
+            foundationDescrip: 'F5-i buruz',
+        },
+         //componente calendario
+         calendar:{
+            botonConf: 'Aktualizatu',
+        },
+         // componente superAdmin
+        superAdmin:{
+            botonModif: 'Kudeatu',
+            botonNewEmployee: 'Langile barria',   
+        },
+        // componente workerAdmin
+        workerAdmin:{
+            principalTitle: 'Erabiltzaile panela',
+            botonNew: 'Barria',
+            botonDelete: 'Ezabatu',
+            botonUpdate: 'Aktualizatu',
         }
     }
 }

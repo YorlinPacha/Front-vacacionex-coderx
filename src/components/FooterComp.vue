@@ -18,11 +18,11 @@
             </div>
             <div class="footer-links-item">
               <div class="heading-18-26">{{ $t('footer.contact') }}</div>
-              <a href="https://www.somosf5.org/contacto" class="footer-links-link">Hablanos</a>
+              <a href="https://www.somosf5.org/contacto" class="footer-links-link">{{ $t('footer.contactDescrip') }}</a>
             </div>
             <div class="footer-links-item">
               <div class="heading-18-26">{{ $t('footer.foundation') }}</div>
-              <a href="https://www.somosf5.org/about" class="footer-links-link">Sobre F5</a>
+              <a href="https://www.somosf5.org/about" class="footer-links-link">{{ $t('footer.foundationDescrip') }}</a>
             </div>
           </div>
           <div class="social">
