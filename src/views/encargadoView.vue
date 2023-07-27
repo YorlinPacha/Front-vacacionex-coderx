@@ -1,12 +1,13 @@
 <script setup>
-import LateralBar from '../components/LateralBar.vue';
+import CompoEncargado from '../components/CompoEncargado.vue';
+
 </script>
 
 <template >
   <!-- <LateralBar /> -->
   <!-- ----------------------------------------------Agregar todo tu contenido dentro del div class="TodoContenido"------------ -->
   <div class="TodoContenido">
-    <h1>Encargado</h1>
+    <CompoEncargado />
   </div>
 </template>
 

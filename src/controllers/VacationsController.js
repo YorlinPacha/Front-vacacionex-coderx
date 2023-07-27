@@ -13,20 +13,28 @@ export function getAllVacations(secret, token) {
   };
 
   return fetch(url + "/vacations", requestOptions)
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        return data;
-      })
-      .catch(error => {
-        console.error('Error al obtener las vacaciones:', error);
-        return error;
-      });
-  };
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      // Convertir las comillas simples a comillas dobles en la cadena de fechas
+      const vacationsWithArrays = data.map(vacation => ({
+        ...vacation,
+        list_days: vacation.list_days ? JSON.parse(vacation.list_days.replace(/'/g, '"')) : []
+      }));
+      console.log(vacationsWithArrays);
+      return vacationsWithArrays;
+    })
+    .catch(error => {
+      console.error('Error al obtener las vacaciones:', error);
+      return error;
+    });
+};
+
 
 // Obtener una vacación por ID
 // Crear una vacación
 export function createVacation(vacationData) {
+  console.log('createVacation(vacationData)',JSON.stringify(vacationData));
   return fetch(url + '/vacations', {
     method: 'POST',
     headers: {
@@ -45,7 +53,7 @@ export function createVacation(vacationData) {
 }
 
 // Actualizar una vacación
-export const updateVacation = (vacationId, data) => {
+export const updateVacation = (data,vacationId ) => {
   fetch(url + `/vacations/${vacationId}`, {
     method: 'PUT',
     headers: {
